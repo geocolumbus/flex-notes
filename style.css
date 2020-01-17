@@ -1,0 +1,84 @@
+.game {
+    position: relative;
+}
+.court {
+    position: absolute;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: calc(100% - 20px);
+}
+.dividing-line {
+    background-color: #eee;
+    width: 10px;
+    height: 100%;
+}
+.half-court {
+    height: 100%;
+    flex-grow: 1;
+}
+
+.puck-container {
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 20px);
+    z-index: 100;
+    display: flex;
+}
+.puck-left {
+    height: 100px;
+}
+.puck-top {
+    width: 20px;
+}
+.puck {
+    width: 20px;
+    height: 20px;
+    background-color: #eee;
+}
+
+.paddle-gutter {
+    width: 15px;
+    height: 100%;
+}
+.paddle-container {
+    width: 20px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.paddle {
+    width: 100%;
+    max-height: 100px;
+    min-height: 100px;
+    flex: 1;
+    background-color: #eee;
+}
+.paddle-top {
+    width: 100%;
+    max-height: 0px;
+    flex: 1;
+}
+
+.controls {
+    position: absolute;
+    z-index: 200;
+    display: flex;
+    width: 100%;
+}
+.left-score, .right-score {
+    color: white;
+    font-size: 42px;
+    flex: 1;
+    padding-top: 10px;
+}
+
+.left-score {
+    padding-right: 30px;
+    text-align: right;
+}
+
+.right-score {
+    padding-left: 30px;
+}

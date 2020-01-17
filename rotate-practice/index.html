@@ -1,0 +1,105 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Flex Rotation Practice</title>
+  <style>
+    .english {
+      flex-direction: column;
+      writing-mode: horizontal-tb;
+    }
+
+    .chinese {
+      flex-direction: row;
+      writing-mode: vertical-rl;
+    }
+
+    .game {
+      width: 100%;
+      height: 100%;
+      display: flex;
+    }
+
+    .board-header {
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .board {
+      flex: 10;
+      display: flex;
+      flex-direction: row;
+    }
+
+    .board-header-title {
+      flex: 6;
+      text-align: center;
+    }
+
+    .language-button-container {
+      flex: 2;
+      align-items: center;
+      justify-content: center;
+      display: flex;
+    }
+
+    .language-button {
+      border-radius: 6px;
+      font-size: medium;
+    }
+
+    .stripe {
+      background-color: #eee;
+      flex: 1;
+    }
+
+    .half-court {
+      background-color: black;
+      flex: 24;
+    }
+  </style>
+</head>
+<body>
+<div class="game">
+  <div class="board-header">
+    <div class="language-button-container"></div>
+    <h1 class="board-header-title">Flex Box Demo</h1>
+    <div class="language-button-container">
+      <button class="language-button" id="language-button"></button>
+    </div>
+  </div>
+  <div class="board">
+    <div class="stripe"></div>
+    <div class="half-court"></div>
+    <div class="stripe"></div>
+    <div class="half-court"></div>
+    <div class="stripe"></div>
+  </div>
+</div>
+<script>
+    let language = "english"
+    const title=document.getElementsByTagName("h1")[0]
+    const languageButton = document.getElementById("language-button")
+    const gameContainer = document.getElementsByClassName("game")[0]
+    languageButton.innerText="Switch to Chinese"
+    gameContainer.classList.add("english")
+    const toggleLanguage = function () {
+        if (language === "english") {
+            gameContainer.classList.remove("english")
+            gameContainer.classList.add("chinese")
+            language = "chinese"
+            languageButton.innerText="Switch to English"
+            title.innerHTML="语言示范"
+        } else {
+            gameContainer.classList.remove("chinese")
+            gameContainer.classList.add("english")
+            language = "english"
+            languageButton.innerText="Switch to Chinese"
+            title.innerHTML="Language Demonstration"
+        }
+
+    }
+    languageButton.onclick = toggleLanguage
+</script>
+</body>
+</html>
